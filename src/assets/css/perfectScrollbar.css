@@ -1,0 +1,13 @@
+/* CSS của PerfectScrollbar */
+.ps__rail-x {
+    opacity: 0.6; /* Opacity của scrollbar ngang */
+  }
+  .ps__rail-y {
+    opacity: 0.6; /* Opacity của scrollbar dọc */
+  }
+  .ps__thumb-x {
+    background-color: #aaa; /* Màu của thanh cuộn ngang */
+  }
+  .ps__thumb-y {
+    background-color: #aaa; /* Màu của thanh cuộn dọc */
+  }

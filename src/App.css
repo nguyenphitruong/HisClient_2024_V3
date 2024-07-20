@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", "Figtree", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background: #ffffff;
+  font-size: 18px;
+}
+.main-panel
+{
+  height: 8vh;
+  background: #ffffff;
+  font-size: 20px;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+}
+
+h1 {
+  color: #05303d;
+  margin: 50px auto;
+  font-size: 20px;
+}
+.closemenu {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h2 {
+  color: #165a72;
+}
+.custom-sidebar {
+  width: 200px; /* Set the width of the sidebar */
+}
+
+.custom-sidebar .pro-sidebar-header {
+  height: 80px; /* Set the height of the sidebar header */
+  background-color: #050404; /* Change the background color of the sidebar header */
+}
+
+.custom-sidebar .pro-sidebar-header h1 {
+  color: white; /* Change the text color of the sidebar header */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item {
+  padding: 10px 10px; /* Adjust padding for menu items */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item.active {
+  background-color: #555; /* Change the background color of active menu items */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item:hover {
+  background-color: #444; /* Change the background color of hovered menu items */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item > a {
+  color: #fff; /* Change the text color of menu item links */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item > a:hover {
+  color: #eee; /* Change the text color of menu item links on hover */
+}
+
+.App {
+  text-align: center;
+  background: #0a0a0a;
+  display: flex;
+}
+
+
+.App-logo {
+  height: 5vmin;
+}
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+}
+.Sibar-header {
+  height: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+}
+.tr-col {
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+.tr-row {
+  margin: 10px;
+}
+.tr-link{
+  color: 'black';
+  textDecoration: 'none';
+  fontSize: '16px';
+  fontWeight: 'bold' ;
+}
+/* CSS để tạo tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #f0e9e9;
+  background-color: #bce2d0;
+  outline: none;
+  color: #e2e3f1;
+  /* padding: 1px 1px;
+  margin: 0;
+  float: left;*/
+  transition: background-color 0.3s; 
+}
+.tab:hover {
+  background-color: #e5eef1;
+  }
+
+.tab.active {
+    background-color: #851616;
+    color: #fff;
+  }
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: background-color 0.3s;
+}
+
+.tab button:hover {
+  background-color: #93e2d1;
+}
+
+/* Hiển thị nội dung của mỗi tab */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tr-table{
+  max-height:400px;
+  max-width:1600px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.sidebar {
+  height: 100vh; /* Full height */
+  width: 100px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #066b38; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; /* Place content 20px from the top */
+  color: #03140b;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2ca763;
+  display: block;
+}
+
+.content {
+  margin-left: 2px; /* Same as the width of the sidebar */
+  padding: 2px;
+  overflow: auto; /* Enable scrolling if content is long */
+  height: 100vh; /* Full height */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  font-size: medium;
+  color: rgb(7, 46, 46);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+.contentcomponent {
+  margin-left: 5px; /* Same as the width of the sidebar */
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  overflow: auto; /* Enable scrolling if content is long */
+  height: 100vh; /* Full height */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  background-color: #ccf2f5; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 5px; /* Place content 20px from the top */
+  color: rgb(24, 26, 26);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.contentcomponentpopup {
+  margin-left: 5px; /* Same as the width of the sidebar */
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  overflow: auto; /* Enable scrolling if content is long */
+  /*height: 100vh; /* Full height */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  background-color: #ccf2f5; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 5px; /* Place content 20px from the top */
+  color: rgb(24, 26, 26);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+.formgroup {
+  margin-left: 5px; /* Same as the width of the sidebar */
+  margin-right: 5px; /* Same as the width of the sidebar */
+  margin-top: 5px; /* Same as the width of the sidebar */
+  margin-bottom: 5px; /* Same as the width of the sidebar */
+  padding: 5px;
+  overflow: auto; /* Enable scrolling if content is long */
+  height: 3; /* Full height */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  background-color: #c0ebeb; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px; /* Place content 20px from the top */
+  color: rgb(11, 26, 26);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+.form {
+  margin-left: 5px; /* Same as the width of the sidebar */
+  margin-right: 5px; /* Same as the width of the sidebar */
+  margin-top: 5px; /* Same as the width of the sidebar */
+  margin-bottom: 5px; /* Same as the width of the sidebar */
+  padding: 5px;
+  overflow: auto; /* Enable scrolling if content is long */
+  height: 3; /* Full height */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  background-color: #c0ebeb; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px; /* Place content 20px from the top */
+  color: rgb(11, 26, 26);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+
+
+.cus_Label{
+margin-left: 5px;
+margin-right: 5px;
+padding: 5px;
+}
+.cus_Input{
+  margin-left: 5px;
+  margin-right: 10px;
+  padding: 2px;
+  }
+  /* Style print */
+  .print-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+  }
+  
+  @media print {
+    .print-container {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .print-container h1 {
+      font-size: 24px;
+      color: blue;
+    }
+  
+    .print-container p {
+      font-size: 14px;
+    }
+  
+    /* Ẩn phần tử không cần in */
+    .no-print {
+      display: none;
+    }
+  }
+/* customModal.css */
+.custom-modal-content {
+  /* max-width: 90%; */
+  width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  
+}
+
+.custom-modal-header {
+  background-color: #007bff;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+ 
+}
+.custom-modal-body {
+  padding: 20px;
+  width: 1200px;
+}
+
+.custom-modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 10px;
+  text-align: right;
+  width: 1200px;
+}
+
+.custom-button {
+  margin-right: 10px;
+}
+
+/* customInput.css */
+.custom-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ac7575;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.custom-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}

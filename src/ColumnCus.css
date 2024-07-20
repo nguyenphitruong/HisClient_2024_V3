@@ -1,0 +1,29 @@
+ /*colum*/
+    
+ .column {
+      
+    flex: 1;
+    padding: 2px;
+    margin-left: 5;
+    box-sizing: border-box;
+    background-color: #f2fffbe0;
+    border: 1px #e4cdcd;
+    }
+
+    .column.small {
+    flex: 1;
+    }
+    .column.medium {
+      flex: 2;
+    }
+    .column.large {
+      flex: 3;
+    }
+    .content-box {
+    
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    padding: 0px;
+    text-align: center;
+    }
+    

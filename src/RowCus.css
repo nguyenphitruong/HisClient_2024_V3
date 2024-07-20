@@ -1,0 +1,40 @@
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of columns if they exceed the row width */
+    margin-left: -15px; /* Adjust for padding in columns */
+      margin-right: -15px; /* Adjust for padding in columns */
+    }
+    
+    .row > .column {
+    padding-left: 15px;
+      padding-right: 15px;
+      
+     
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    }
+    .row.justify-center {
+    justify-content: center;
+    }
+    .row.justify-end {
+      
+    justify-content: flex-end;
+    }
+    
+    .row.justify-space-between {
+    
+    justify-content: space-between;
+    }
+    
+    .row.align-center {
+    align-items: center;
+    }
+    .row.align-start {
+    
+    align-items: flex-start;
+    }
+    .row.align-end {
+    
+    align-items: flex-end;
+    }
+    
+   
