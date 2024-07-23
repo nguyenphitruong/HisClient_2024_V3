@@ -69,6 +69,7 @@ function  Sidebars (props) {
     };
 
     const [lstCateSevice, setlstCateSevice] = useState([]);
+    const [lstCateShareH, setlstCateShareH] = useState([]);
     const [lstCateShare, setlstCateShare] = useState([]);
     const [lstCateIcd, setlstCateIcd] = useState([]);
     const [lstCateHosp, setlstCateHosp] = useState([]);
@@ -96,9 +97,10 @@ function  Sidebars (props) {
               //  setlstCateIcd(JSON.stringify(arr1[1].value));
               //  setlstCateHosp(JSON.stringify(arr1[2].value));
 
-               setlstCateShare(arr1[0].value);
-               setlstCateIcd(arr1[1].value);
-               setlstCateHosp(arr1[2].value);
+               setlstCateShareH(arr1[0].value);
+               setlstCateShare(arr1[1].value);
+               setlstCateIcd(arr1[2].value);
+               setlstCateHosp(arr1[3].value);
 
               //setData(JSON.stringify(dataPase))
               //setData(dataPase)
@@ -171,6 +173,7 @@ return (
         <Fragment>
             {prop.chilren.map((propchilren, indexchilren) => (
              <Route key={indexchilren} path={propchilren.layout  + propchilren.modulepath + propchilren.path} element={<propchilren.component 
+              LstCachingCateShareHeader={lstCateShareH} 
               LstCachingCateShareLine={lstCateShare} 
               LstCachingCateICD10={lstCateIcd} 
               LstCachingCateHopital={lstCateHosp}  

@@ -30,12 +30,13 @@ import {
         // console.log("a:" +a);
         // console.log("b:" +b);
       
-        const a = LstCachingCateShareLine;
-        const b = LstCachingCateICD10;
-        const c = LstCachingCateHopital;
-        console.log("a:" +a);
-        console.log("b:" +b);
-        console.log("c:" +c);
+        // const a = LstCachingCateShareLine;
+        // const b = LstCachingCateICD10;
+        // const c = LstCachingCateHopital;
+
+        // console.log("a:" +a);
+        // console.log("b:" +b);
+        // console.log("c:" +c);
     //const {DataCaching} = useContext(DataContext);
     //const lstDataCaching =  [];
     //lstDataCaching = DataCaching;

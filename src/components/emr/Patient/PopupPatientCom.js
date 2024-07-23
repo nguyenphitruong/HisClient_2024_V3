@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import callApi from '../../../apis/callApi';
 //import Modal from '../Modal/Modal.js';
 import patientModel from '../../../models/emr/patient/PatientModel';
-import patientHi from '../../../models/emr/patient/PatientHiModel';
+import patientHiModel from '../../../models/emr/patient/PatientHiModel';
 import PrintComponent from '../../PrintReports/PrintComponent.js';
 import Row from '../../../RowCus.js';
 import Col from '../../../ColumnCus.js';
@@ -28,7 +28,6 @@ import {
     Button,
     FormText,
     Navbar
-
 } from "reactstrap";
 function Patient ({ LstCachingCateShareLine,LstCachingCateHopital}) {
 
@@ -43,34 +42,14 @@ function Patient ({ LstCachingCateShareLine,LstCachingCateHopital}) {
   // const[formDataPatientFromReg, setFormDataPatientFromReg] = useState(i_patientModel
   // );
   const[formDataPatient, setFormDataPatient] = useState({patientModel});
-  const[dataPatientHi, setDataPatientHi] = useState({patientHi});
-  const[dataBHYT, setDataBHYT] = useState({
-                maKetQua: '',
-                ghiChu: '',
-                maThe: '',
-                hoTen: '',
-                ngaySinh: '',
-                gioiTinh: '',
-                diaChi: '',
-                maDKBD: '',
-                cqBHXH: '',
-                gtTheTu: '',
-                gtTheDen: '',
-                maKV: '',
-                ngayDu5Nam: '',
-                maSoBHXH: '',
-                maTheCu: '',
-                maTheMoi: '',
-                gtTheTuMoi:'',
-                gtTheDenMoi:'',
-                maDKBDMoi:'',
-                tenDKBDMoi: '',
-  });
+  const[dataPatientHi, setDataPatientHi] = useState(new patientHiModel());
+
+  const[dataBHYT, setDataBHYT] = useState({bHYTModel});
   // const[formDataPatient, setFormDataPatient] = useState({
   //   patientModel
   // });
 
-  console.log('formDataPatient:' + formDataPatient)
+  //console.log('formDataPatient:' + formDataPatient)
   
 
   const [show, setShow] = useState(false);
@@ -121,29 +100,6 @@ function Patient ({ LstCachingCateShareLine,LstCachingCateHopital}) {
   const handleChange = (event) => {
       const { name, value } = event.target;
       console.log("EVEN:" + JSON.stringify(event.target.name)) ; 
-      //Cật nhật trạng thái của model dữ liệu với giá trị mới
-      // if(event.target.name === "citycode"&& event.target.length>0)
-      // {
-      //   const lstTem = [];
-      // districtsfull.forEach(f => {
-      //     if(f.parent === event.target.value)
-      //     {
-      //        lstTem.push({...f})
-      //     }
-      // });
-      // setDistricts(lstTem);
-      // }
-      // if(event.target.name === "districtcode"&& event.target.length>0)
-      // {
-      //   const lstTem = [];
-      // wardsfull.forEach(f => {
-      //     if(f.parent === event.target.value)
-      //     {
-      //        lstTem.push({...f})
-      //     }
-      // });
-      // setWards(lstTem);
-      // }
       setFormDataPatient({
           ...formDataPatient,
           [name]: value
@@ -153,11 +109,19 @@ function Patient ({ LstCachingCateShareLine,LstCachingCateHopital}) {
   const handleChangeBHYT = (event) => {
     const { name, value } = event.target;
     console.log("EVEN:" + JSON.stringify(event.target.name)) ; 
-    
-    setDataPatientHi({
-        ...dataPatientHi,
-        [name]: value
-    });
+
+    const dataPatientHiNew = { ...dataPatientHi };
+    if (name === 'nohi') {
+      dataPatientHiNew.setNohi(value);
+    } else if (name === 'fromdate') {
+      dataPatientHi.setFromdate(value);
+    }
+    setDataPatientHi(dataPatientHiNew);
+
+    // setDataPatientHi({
+    //     ...dataPatientHiNew,
+    //     [name]: value
+    // });
 };
 
 //1.Tạo model với các thuộc tính để biding
@@ -319,28 +283,23 @@ const handleKeyDownAdd = (event) => {
 
                //setDataPatientHi(PatientHiTem);
 
-              //  formDataPatient.name = dataBHYT.hoTen;
-              //  formDataPatient.birthday = dataBHYT.ngaySinh;
-              //  formDataPatient.sexcode = dataBHYT.gioiTinh;
-              //  formDataPatient.addresworkplace = dataBHYT.diaChi;
+                formDataPatient.name = dataBHYT.hoTen;
+                formDataPatient.birthday = dataBHYT.ngaySinh;
+                formDataPatient.sexcode = dataBHYT.gioiTinh;
+                formDataPatient.addresworkplace = dataBHYT.diaChi;
 
-               console.log('Data dataPatientHi Get:' + dataBHYT);
+               //console.log('Data dataPatientHi Get:' + dataBHYT);
 
-               const dataPatientHiTemp = {};
+               
 
-               dataPatientHiTemp.nohi = dataBHYT.mathe;
-               dataPatientHiTemp.fromdate = dataBHYT.gtTheTu;
-               dataPatientHiTemp.totate = dataBHYT.gtTheDen;
-               dataPatientHiTemp.gland = dataBHYT.maDKBD;
+               dataPatientHi.nohi = dataBHYT.mathe;
+               dataPatientHi.fromdate = dataBHYT.gtTheTu;
+               dataPatientHi.totate = dataBHYT.gtTheDen;
+               dataPatientHi.gland = dataBHYT.maDKBD;
 
-               setDataPatientHi(dataPatientHiTemp);
-
-              //  dataPatientHi.nohi = dataBHYT.mathe;
-              //  dataPatientHi.nohi = dataBHYT.mathe;
-              //  dataPatientHi.nohi = dataBHYT.mathe;
-
+               //setDataPatientHi(dataPatientHiTemp);
               
-              console.log('Data dataPatientHiTemp:' + dataPatientHi);
+              console.log('Data dataPatientHiTemp:' + JSON.stringify(dataPatientHi));
 
                 
      
@@ -632,7 +591,7 @@ const handleKeyDownAdd = (event) => {
                                value={dataPatientHi.nohi}
                               // value={dataBHYT.maThe}
                                
-                              onChange={handleChangeBHYT} 
+                              onChange={handleChange} 
                               placeholder=" "
                               type="text"
                             />
