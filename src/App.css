@@ -216,6 +216,7 @@ h2 {
   padding: 5px;
   overflow: auto; /* Enable scrolling if content is long */
   height: 100vh; /* Full height */
+  
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
   background-color: #ccf2f5; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
@@ -365,3 +366,22 @@ padding: 5px;
   display: block;
   margin-bottom: 5px;
 }
+/* Begin Table*/
+.table-container {
+  width: 100%;
+  height: 50vh; /* Full height */
+  overflow-y: auto; /* Thanh trượt dọc */
+  overflow-x: auto; /* Thanh trượt ngang, nếu cần */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+/* End Table*/

@@ -272,7 +272,7 @@ const handleKeyDownAdd = (event) => {
             {
               let url = '/Patient/CheckExpertiseBHYT';
               console.log('Json lưu', bhytGet);
-              //alert(bhytGet);
+              alert(bhytGet);
 
               let datatemp = await callApi.Post(url,bhytGet);
                const arr = []
