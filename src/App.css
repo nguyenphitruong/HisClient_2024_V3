@@ -73,7 +73,6 @@ h2 {
   display: flex;
 }
 
-
 .App-logo {
   height: 5vmin;
 }
@@ -112,16 +111,17 @@ h2 {
 .tab {
   overflow: hidden;
   border: 1px solid #f0e9e9;
-  background-color: #bce2d0;
+  background-color: #dde3ee;
   outline: none;
   color: #e2e3f1;
-  /* padding: 1px 1px;
-  margin: 0;
-  float: left;*/
+  padding: 1px 1px;
+  margin: 1px;
+  /* float: left; */
   transition: background-color 0.3s; 
+  height: 40px;
 }
 .tab:hover {
-  background-color: #e5eef1;
+  background-color: #e2e3f1;
   }
 
 .tab.active {
@@ -139,7 +139,8 @@ h2 {
 }
 
 .tab button:hover {
-  background-color: #93e2d1;
+  background-color: #265ec7;
+  color: white;
 }
 
 /* Hiển thị nội dung của mỗi tab */
@@ -165,7 +166,7 @@ h2 {
   background-color: #f9f9f9;
 }
 .pagination button.active {
-  background-color: #007bff;
+  background-color: #105b72;
   color: #fff;
 }
 
@@ -175,10 +176,10 @@ h2 {
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #066b38; /* Black */
+  background-color: #d9e1f1; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px; /* Place content 20px from the top */
-  color: #03140b;
+  color: #265ec7;
   
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
@@ -193,7 +194,7 @@ h2 {
   padding: 8px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #2ca763;
+  color: #417dec;
   display: block;
 }
 
@@ -203,27 +204,33 @@ h2 {
   overflow: auto; /* Enable scrolling if content is long */
   height: 100vh; /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  width: auto;
   font-size: medium;
   color: rgb(7, 46, 46);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
+  display: flex;
+  flex-direction: column; /* Chuyển thành 'row' nếu muốn bố cục ngang */
 }
 .contentcomponent {
-  margin-left: 5px; /* Same as the width of the sidebar */
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-left: 2px; /* Same as the width of the sidebar */
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 2px;
   overflow: auto; /* Enable scrolling if content is long */
   height: 100vh; /* Full height */
-  
+  /*width: calc(100% - 200px); /* Adjust for the sidebar width */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  background-color: #ccf2f5; /* Black */
+  width: 100%;
+  background-color: #f6f7f880; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5px; /* Place content 20px from the top */
   color: rgb(24, 26, 26);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
+  flex-direction: column; /* Chuyển thành 'row' nếu muốn bố cục ngang */
+  display: flex;
 }
 
 .contentcomponentpopup {
@@ -235,7 +242,7 @@ h2 {
   overflow: auto; /* Enable scrolling if content is long */
   /*height: 100vh; /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  background-color: #ccf2f5; /* Black */
+  background-color: #f6f7f880; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5px; /* Place content 20px from the top */
   color: rgb(24, 26, 26);
@@ -328,10 +335,11 @@ padding: 5px;
 }
 
 .custom-modal-header {
-  background-color: #007bff;
+  background-color: #266cbb;
   color: white;
   border-radius: 10px 10px 0 0;
   padding: 10px;
+  height: 20px;
  
 }
 .custom-modal-body {
@@ -385,3 +393,46 @@ th, td {
   text-align: left;
 }
 /* End Table*/
+
+/*grid Style*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  height: 100vh; /* Chiều cao đầy đủ của màn hình */
+}
+
+.grid-item {
+  background-color: lightblue;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flex-container {
+ 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.flex-item {
+  width: 80%;
+  background-color: #4CAF50;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.container-grid-buton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Đẩy grid xuống dưới cùng */
+  height: 10vh; /* Chiều cao toàn màn hình */
+}
+/* End grid Style*/

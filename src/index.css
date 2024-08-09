@@ -22,3 +22,35 @@ h1 {
 h2 {
   color: #165a72;
 }
+
+/*grid Style*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  height: 100vh; /* Chiều cao đầy đủ của màn hình */
+}
+
+.grid-item {
+  background-color: lightblue;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100vh; /* Chiều cao đầy đủ của màn hình */
+  width: 100vh; /* Chiều cao đầy đủ của màn hình */
+}
+
+.flex-item {
+  background-color: lightblue;
+  padding: 20px;
+  flex: 1; /* Mỗi item sẽ chiếm cùng một không gian */
+  margin: 10px;
+  box-sizing: border-box;
+  width: 100vh;
+}
+/* End grid Style*/

@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap; /* Allows wrapping of columns if they exceed the row width */
     margin-left: -15px; /* Adjust for padding in columns */
-      margin-right: -15px; /* Adjust for padding in columns */
+    margin-right: -15px; /* Adjust for padding in columns */
     }
     
     .row > .column {

@@ -22,6 +22,8 @@ import Patient from './components/emr/PatientCom.js';
 import TabTableComponent from './components/emr/TabTableComponent.js';
 import PageNumberCom from './components/emr/PageNumberCom.js';
 import CateShareCom from "./components/sys/cateShareCom.js";
+import ExMaterial from "./components/ExMaterial.js";
+
 
 
 import callApi from './apis/callApi';
@@ -213,33 +215,16 @@ var routes = [
         layout: "/admin",
         modulepath: "/sys",
       },
-      // {
-      //   code: "DANHMUCDUNGCHUNG",
-      //   name: "TabTable example",
-      //   path: "/cateShareCom",
-      //   icon: TimelineRoundedIcon,
-      //   component : cateShareCom,
-      //   layout: "/admin",
-      //   modulepath: "/sys",
-      // },
+      {
+        code: "DANHMUCKHAC",
+        name: "Giao diện",
+        path: "/exMaterial",
+        icon: TimelineRoundedIcon,
+        component : ExMaterial,
+        layout: "/admin",
+        modulepath: "/sys",
+      },
     ]
   },
 ];
-
-// var data = [refreshList()];
-// function refreshList()
-// {
-//     try
-//      {
-//         let datatemp =  callApi.GetAll();
-//         const arr = []
-//         Object.keys(datatemp).forEach(key => arr.push({name: key, value: datatemp[key]}))
-//          let dataPase = arr[2].value;
-//          console.log('Get List dataPase menu', dataPase);
-//         return dataPase
-//     } catch (error) 
-//     {
-//         console.log('Get list field',error)
-//     }
-// }
 export default routes;

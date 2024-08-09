@@ -147,7 +147,7 @@ function Dashboard (props){
 
   return (
     <div className="content">
-      <Header/>
+      {/* <Header/> */}
       < Sidebars
        {...props}
        routes={data}
@@ -159,7 +159,11 @@ function Dashboard (props){
        {/* <div  style={{color: 'red', justifyContent: 'center', display: 'flex', width:'100'}} ref={mainPanel}>
         style={{color: 'red', justifyContent: 'center', display: 'flex', height: '80px', width: '100%'}}
       </div> */}
-      <div style={{color: 'red', justifyContent: 'center', display: 'flex', height: '80px', width: '100%'}}  ref={mainPanel}>
+      {/* <div style={{color: 'red', justifyContent: 'center', display: 'flex', height: '80px', width: '100%'}}  ref={mainPanel}>
+      
+      </div> */}
+
+      <div className="content" ref={mainPanel}>
       
       </div>
       {/* <Foodter/>    */}

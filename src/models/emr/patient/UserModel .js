@@ -1,5 +1,6 @@
 class UserModel {
-    constructor(name = '', email = '') {
+    constructor(name = '', email = '') 
+    {
       this.name = name;
       this.email = email;
     }
@@ -12,5 +13,4 @@ class UserModel {
       this.email = email;
     }
   }
-  
   export default UserModel;
