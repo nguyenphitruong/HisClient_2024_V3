@@ -19,7 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #000;
+  color:  #265ec7;
 }
 
 h1 {
@@ -35,11 +35,22 @@ h2 {
   color: #165a72;
 }
 .custom-sidebar {
-  width: 200px; /* Set the width of the sidebar */
+  height: 100vh; /* Full height */
+  width: 100px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #1f63f5; /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; /* Place content 20px from the top */
+  color: #265ec7;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
 
 .custom-sidebar .pro-sidebar-header {
-  height: 80px; /* Set the height of the sidebar header */
+  height: 100px; /* Set the height of the sidebar header */
   background-color: #050404; /* Change the background color of the sidebar header */
 }
 
@@ -52,19 +63,20 @@ h2 {
 }
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item.active {
-  background-color: #555; /* Change the background color of active menu items */
-}
+  background-color: #641b1b; /* Change the background color of active menu items */
+  /* background-color: #555; /* Change the background color of active menu items */
+} */
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item:hover {
   background-color: #444; /* Change the background color of hovered menu items */
 }
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item > a {
-  color: #fff; /* Change the text color of menu item links */
+  color: #97dfcd; /* Change the text color of menu item links */
 }
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item > a:hover {
-  color: #eee; /* Change the text color of menu item links on hover */
+  color: #d45aec; /* Change the text color of menu item links on hover */
 }
 
 .App {
@@ -86,7 +98,7 @@ h2 {
   color: #000;
 }
 .Sibar-header {
-  height: 2px;
+  height: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,23 +122,24 @@ h2 {
 /* CSS để tạo tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #f0e9e9;
-  background-color: #dde3ee;
+  border: 1px solid #b1c2fa;
+  background-color: #c2d0fc;
   outline: none;
-  color: #e2e3f1;
   padding: 1px 1px;
   margin: 1px;
   /* float: left; */
   transition: background-color 0.3s; 
-  height: 40px;
+  height: 42px;
+  color:#265ec7 ; 
+  
 }
 .tab:hover {
-  background-color: #e2e3f1;
+  background-color: #c2d0fc;
   }
 
 .tab.active {
     background-color: #851616;
-    color: #fff;
+    color: #265ec7;
   }
 .tab button {
   background-color: inherit;
@@ -136,6 +149,9 @@ h2 {
   cursor: pointer;
   padding: 14px 16px;
   transition: background-color 0.3s;
+  color:#265ec7 ; 
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .tab button:hover {
@@ -149,6 +165,7 @@ h2 {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  color:#265ec7 ; 
 }
 .tr-table{
   max-height:400px;
@@ -201,12 +218,12 @@ h2 {
 .content {
   margin-left: 2px; /* Same as the width of the sidebar */
   padding: 2px;
-  overflow: auto; /* Enable scrolling if content is long */
+  /*overflow: auto; /* Enable scrolling if content is long */
   height: 100vh; /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
   width: auto;
   font-size: medium;
-  color: rgb(7, 46, 46);
+  color: #203066;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
   display: flex;
@@ -226,7 +243,10 @@ h2 {
   background-color: #f6f7f880; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5px; /* Place content 20px from the top */
-  color: rgb(24, 26, 26);
+  /* color: rgb(35, 80, 175); */
+  /* color:  #04258f; */
+  color:  #203066;
+  
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
   flex-direction: column; /* Chuyển thành 'row' nếu muốn bố cục ngang */
@@ -245,9 +265,18 @@ h2 {
   background-color: #f6f7f880; /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5px; /* Place content 20px from the top */
-  color: rgb(24, 26, 26);
+  /* color: rgb(24, 26, 26); */
+  color:  #203066;
+  /* color:  #2e5df5; */
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
+}
+.LabelTitel {
+  margin-left : 20px;
+  color:  #e7e8ee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-weight: bold;
 }
 .formgroup {
   margin-left: 5px; /* Same as the width of the sidebar */
@@ -330,13 +359,14 @@ padding: 5px;
   margin: 0 auto;
   background-color: #f0f0f0;
   border-radius: 10px;
-  padding: 20px;
-  
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
 }
 
 .custom-modal-header {
-  background-color: #266cbb;
-  color: white;
+  background-color: #2e5df5;
+  color: #F5F5F5;
   border-radius: 10px 10px 0 0;
   padding: 10px;
   height: 20px;

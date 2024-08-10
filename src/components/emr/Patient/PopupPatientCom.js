@@ -301,7 +301,7 @@ function Patient({ LstCachingCateShareLine, LstCachingCateHopital }) {
 
     <div >
       <Form onSubmit={handleSubmit}>
-        <Button color="primary" onClick={handleShow}>...</Button>
+        <Button color="primary" onClick={handleShow}>Thêm</Button>
         <CustomModal show={show} onHide={handleClose} width="1400px">
           <Modal.Header closeButton className='custom-modal-header'>
             <Modal.Title>Thông tinh hành chính bệnh nhân!</Modal.Title>

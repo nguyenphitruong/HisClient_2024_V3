@@ -15,7 +15,7 @@ const admin = () => {
   return (
     <DataProvider>
        {/* {<CateServiceItemCom />} */}
-      <div>
+      <div className="content">
         {<Dashboard/>}
       </div>
     </DataProvider>

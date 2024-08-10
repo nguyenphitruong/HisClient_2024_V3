@@ -48,10 +48,11 @@ function Registercomponent({ LstCachingCateShareLine, LstCachingCateICD10, LstCa
     <Grid container spacing={1}>
       {/* Tab buttons */}
       <Grid item xs={12} >
+      {/* style={{ color: '#265ec7' }} */}
         {/* <Paper style={{  height: 50, backgroundColor: 'lightgreen',  alignItems: 'center', justifyContent: 'center', padding:2 }}> */}
         <div className='tab'>
           {data.map((item, index) => (
-            <Button style={{ color: 'Black' }} key={index} onClick={() => changeTab(index)}>{item.tabName}</Button>
+            <Button className='tab butto'  key={index} onClick={() => changeTab(index)}>{item.tabName}</Button>
           ))}
         </div>
         {/* 

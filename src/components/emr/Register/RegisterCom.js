@@ -220,8 +220,8 @@ function RegisterCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingC
                     <FormGroup row className="mb-2 mr-sm-2 mb-sm-1"  >
                       {/* <Label className="custom-label"  for="patcode" sm={3} >Mã BN:</Label> */}
                       <Label for="patcode" sm={3} style={{textAlign: 'right' , marginLeft: 0}} >Mã BN:</Label>
-                      <Col >
-                        <Input style={{width:'350px'}}
+                      <Col sm={6}>
+                        <Input 
                           id="patcode"
                           name="patcode"
                           // value= {patcodeSelect} onChange={(e) => setPatcodeSelect(e.target.value)}
@@ -232,12 +232,12 @@ function RegisterCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingC
                           type="text"
                         />
                       </Col>
-                      <Col   >
-                        <PopupPatientCom
+                      <Col Col sm={2}>
+                      
+                      <PopupPatientCom 
                           LstCachingCateShareLine={LstCachingCateShareLine}
                           LstCachingCateHopital={LstCachingCateHopital} />
-
-                        {/* patientModel={formDataPatient} /> */}
+                      
                       </Col>
                     </FormGroup>
                     <FormGroup row className="mb-2 mr-sm-2 mb-sm-1" >
