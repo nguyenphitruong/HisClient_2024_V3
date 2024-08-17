@@ -1,23 +1,4 @@
 
-import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import ReceiptRoundedIcon from "@mui/icons-material/ReceiptRounded";
-import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
-import TimelineRoundedIcon from "@mui/icons-material/TimelineRounded";
-import BubbleChartRoundedIcon from "@mui/icons-material/BubbleChartRounded";
-import WalletRoundedIcon from "@mui/icons-material/WalletRounded";
-import AccountBalanceRoundedIcon from "@mui/icons-material/AccountBalanceRounded";
-import SavingsRoundedIcon from "@mui/icons-material/SavingsRounded";
-import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded";
-import SettingsApplicationsRoundedIcon from "@mui/icons-material/SettingsApplicationsRounded";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
-import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-
-import Patientcomponent from "../components/emr/patientcomponent.js"
-import Registercomponent from "../components/emr/registercomponent";
-import Outcliniccomponent from "../components/emr/outcliniccomponent";
-
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { NavLink } from "react-router-dom";
 import { Nav } from "reactstrap";
@@ -27,6 +8,7 @@ import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from "react-pro-sideb
 import { Routes, Route, Link } from "react-router-dom";
 import React, { useContext, useState, Fragment, useEffect } from "react";
 import callApi from '../apis/callApi';
+//import '../SidebarStyleCus.css';
 
 import { Icon } from "@mui/material";
 //import { DataContext } from '../contexts/ShareContext/DataContext.js';
@@ -61,7 +43,7 @@ function Sidebars(props) {
 
       const arr1 = []
       Object.keys(dataPase).forEach(key => arr1.push({ name: key, value: dataPase[key] }))
-      
+
       setlstCateShareH(arr1[0].value);
       setlstCateShare(arr1[1].value);
       setlstCateIcd(arr1[2].value);
@@ -98,32 +80,38 @@ function Sidebars(props) {
   }
 
   return (
-    <div style={{ display: "flex", height: "80vh" }}>
+    // <div style={{ display: "flex", height: "90vh" }}>
+    <div style={{ display: "flex", height: "100vh", flexDirection: 'row', display: 'flex' }}>
+
       {/* <PerfectScrollbar> */}
       <Sidebar className="custom-sidebar" >
-        <Menu>
-          <MenuItem className="closemenu"
-            icon={<MenuRoundedIcon
-              onClick={() => {
-                collapseSidebar();
-              }}
-            />}>
-            <h2> Menu</h2>
-          </MenuItem>
-          {/* style={{color: 'black',textDecoration: 'none',fontSize: '18px'}} */}
-          {props.routes.map((prop, key) => (
-            <SubMenu key={key} icon={<prop.moduleicon></prop.moduleicon>} label={prop.modulename} >
-              {prop.chilren.map((chilren, keychilren) => (
-                <MenuItem key={keychilren} >
-                  {<chilren.icon />}
-                  <Link style={{ color: '#114747', textDecoration: 'none', fontSize: '16px' }} className="tr-link"
-                    to={chilren.layout + chilren.modulepath + chilren.path}>{chilren.name}
-                  </Link>
-                </MenuItem>
-              ))}
-            </SubMenu>
-          ))}
-        </Menu>
+        
+          <Menu >
+            <MenuItem className="closemenu"
+              icon={<MenuRoundedIcon
+                onClick={() => {
+                  collapseSidebar();
+                }}
+              />}>
+              <h2> Menu</h2>
+            </MenuItem>
+            {/* style={{color: 'black',textDecoration: 'none',fontSize: '18px'}} */}
+
+            {props.routes.map((prop, key) => (
+              <SubMenu key={key} icon={<prop.moduleicon></prop.moduleicon>} label={prop.modulename} >
+                {prop.chilren.map((chilren, keychilren) => (
+                  <MenuItem key={keychilren} >
+                    {<chilren.icon />}
+                    <Link style={{ color: '#114747', textDecoration: 'none', fontSize: '16px' }} className="tr-link"
+                      to={chilren.layout + chilren.modulepath + chilren.path}>{chilren.name}
+                    </Link>
+                  </MenuItem>
+                ))}
+              </SubMenu>
+            ))}
+
+          </Menu>
+        
       </Sidebar>
       {/* </PerfectScrollbar> */}
 
@@ -143,7 +131,7 @@ function Sidebars(props) {
         ))}
       </Routes>
 
-    </div>
+    </div >
   );
 };
 

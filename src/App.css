@@ -1,14 +1,21 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
   font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", "Figtree", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  height: 80vh;
   background: #ffffff;
   font-size: 18px;
 }
-.main-panel
-{
+
+.main-panel {
   height: 8vh;
   background: #ffffff;
   font-size: 20px;
@@ -19,7 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color:  #265ec7;
+  color: #265ec7;
 }
 
 h1 {
@@ -27,56 +34,106 @@ h1 {
   margin: 50px auto;
   font-size: 20px;
 }
+
 .closemenu {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 h2 {
   color: #165a72;
 }
+
+.th-cus {
+  background: #417dec;
+  color: whitesmoke;
+}
+
 .custom-sidebar {
-  height: 100vh; /* Full height */
-  width: 100px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  top: 0; /* Stay at the top */
+  height: 95vh;
+  /* Full height */
+  width: 100px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  top: 0;
+  /* Stay at the top */
   left: 0;
-  background-color: #1f63f5; /* Black */
+  background-color: #1f63f5;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px; /* Place content 20px from the top */
+  padding-top: 20px;
+  /* Place content 20px from the top */
   color: #265ec7;
-  
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
 }
 
-.custom-sidebar .pro-sidebar-header {
-  height: 100px; /* Set the height of the sidebar header */
-  background-color: #050404; /* Change the background color of the sidebar header */
+/*.custom-sidebar. pro-sidebar-header {*/
+.custom-sidebar .pro-sidebar-header{
+  /*height: 100px; /* Set the height of the sidebar header */
+  /*background-color: #1f63f5; /* Change the background color of the sidebar header */
+  background-color: #1f63f5;
+  padding: 5px;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.sidebar-item {
+  padding: 5px 20px;
+  border-bottom: 1px solid #444;
+  background-color: #2e5df5;
+  color: #e7e8ee;
+}
+
+.sidebar-item a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-item a:hover {
+  background-color: #555;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
 }
 
 .custom-sidebar .pro-sidebar-header h1 {
-  color: white; /* Change the text color of the sidebar header */
+  color: white;
+  /* Change the text color of the sidebar header */
 }
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item {
-  padding: 10px 10px; /* Adjust padding for menu items */
+  padding: 10px 10px;
+  /* Adjust padding for menu items */
 }
 
 .custom-sidebar .pro-sidebar-menu .pro-menu-item.active {
-  background-color: #641b1b; /* Change the background color of active menu items */
+  background-color: #641b1b;
+  /* Change the background color of active menu items */
   /* background-color: #555; /* Change the background color of active menu items */
-} */
-
-.custom-sidebar .pro-sidebar-menu .pro-menu-item:hover {
-  background-color: #444; /* Change the background color of hovered menu items */
 }
 
-.custom-sidebar .pro-sidebar-menu .pro-menu-item > a {
-  color: #97dfcd; /* Change the text color of menu item links */
+*/ .custom-sidebar .pro-sidebar-menu .pro-menu-item:hover {
+  background-color: #5672ee;
+  /* Change the background color of hovered menu items */
 }
 
-.custom-sidebar .pro-sidebar-menu .pro-menu-item > a:hover {
-  color: #d45aec; /* Change the text color of menu item links on hover */
+.custom-sidebar .pro-sidebar-menu .pro-menu-item>a {
+  color: #97dfcd;
+  /* Change the text color of menu item links */
+}
+
+.custom-sidebar .pro-sidebar-menu .pro-menu-item>a:hover {
+  color: #d45aec;
+  /* Change the text color of menu item links on hover */
 }
 
 .App {
@@ -88,6 +145,7 @@ h2 {
 .App-logo {
   height: 5vmin;
 }
+
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -97,6 +155,7 @@ h2 {
   font-size: calc(10px + 2vmin);
   color: #000;
 }
+
 .Sibar-header {
   height: 4px;
   display: flex;
@@ -106,41 +165,48 @@ h2 {
   font-size: calc(10px + 2vmin);
   color: #000;
 }
+
 .tr-col {
   margin: 10px;
   border: 1px solid #ccc;
 }
+
 .tr-row {
   margin: 10px;
 }
-.tr-link{
+
+.tr-link {
   color: 'black';
   textDecoration: 'none';
   fontSize: '16px';
-  fontWeight: 'bold' ;
+  fontWeight: 'bold';
 }
+
 /* CSS để tạo tab */
 .tab {
   overflow: hidden;
   border: 1px solid #b1c2fa;
   background-color: #c2d0fc;
+  /* background-color: whitesmoke; */
   outline: none;
   padding: 1px 1px;
   margin: 1px;
   /* float: left; */
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
   height: 42px;
-  color:#265ec7 ; 
-  
+  color: #265ec7;
+
 }
+
 .tab:hover {
   background-color: #c2d0fc;
-  }
+}
 
 .tab.active {
-    background-color: #851616;
-    color: #265ec7;
-  }
+  background-color: #851616;
+  color: #265ec7;
+}
+
 .tab button {
   background-color: inherit;
   float: left;
@@ -149,7 +215,7 @@ h2 {
   cursor: pointer;
   padding: 14px 16px;
   transition: background-color 0.3s;
-  color:#265ec7 ; 
+  color: #265ec7;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -159,22 +225,32 @@ h2 {
   color: white;
 }
 
+.tab button.active {
+  background-color: #265ec7;
+  color: white;
+  border-color: #007bff;
+  /*border-color: #6eb4ff;*/
+}
+
 /* Hiển thị nội dung của mỗi tab */
 .tabcontent {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-  color:#265ec7 ; 
+  color: #265ec7;
 }
-.tr-table{
-  max-height:400px;
-  max-width:1600px;
+
+.tr-table {
+  max-height: 400px;
+  max-width: 1600px;
 }
+
 .pagination {
   display: flex;
   justify-content: center;
 }
+
 .pagination button {
   margin: 0 5px;
   padding: 5px 10px;
@@ -182,22 +258,29 @@ h2 {
   border: 1px solid #ccc;
   background-color: #f9f9f9;
 }
+
 .pagination button.active {
   background-color: #105b72;
   color: #fff;
 }
 
 .sidebar {
-  height: 100vh; /* Full height */
-  width: 100px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  top: 0; /* Stay at the top */
+  height: 100vh;
+  /* Full height */
+  width: 100px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  top: 0;
+  /* Stay at the top */
   left: 0;
-  background-color: #d9e1f1; /* Black */
+  background-color: #d9e1f1;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px; /* Place content 20px from the top */
+  padding-top: 20px;
+  /* Place content 20px from the top */
   color: #265ec7;
-  
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
 }
@@ -216,141 +299,259 @@ h2 {
 }
 
 .content {
-  margin-left: 2px; /* Same as the width of the sidebar */
+  margin: 5px;
+  /* Same as the width of the sidebar */
   padding: 2px;
   /*overflow: auto; /* Enable scrolling if content is long */
-  height: 100vh; /* Full height */
+  /*height: 100vh; /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  width: auto;
+  width: 100%;
+  /*height: 768px; /* Full height */
   font-size: medium;
   color: #203066;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
   display: flex;
-  flex-direction: column; /* Chuyển thành 'row' nếu muốn bố cục ngang */
+  flex-direction: column;
+  /* Chuyển thành 'row' nếu muốn bố cục ngang */
 }
+
+.content-body {
+  margin: 10px;
+  /* Same as the width of the sidebar */
+  padding: 2px;
+  /*overflow: auto; /* Enable scrolling if content is long */
+  /*height: 80vh; /* Full height */
+  /*height: calc(100% - 250px); /* Adjust for the sidebar width */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  max-width: 1024px;
+  max-height: 768px;
+  font-size: medium;
+  color: #203066;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  /* Chuyển thành 'row' nếu muốn bố cục ngang */
+}
+
 .contentcomponent {
-  margin-left: 2px; /* Same as the width of the sidebar */
+  margin-left: 2px;
+  /* Same as the width of the sidebar */
   margin-right: 2px;
   margin-top: 2px;
   margin-bottom: 2px;
-  padding: 2px;
-  overflow: auto; /* Enable scrolling if content is long */
-  height: 100vh; /* Full height */
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  overflow: auto;
+  /* Enable scrolling if content is long */
+  height: 90vh;
+  /* Full height */
   /*width: calc(100% - 200px); /* Adjust for the sidebar width */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
   width: 100%;
-  background-color: #f6f7f880; /* Black */
+  background-color: #eef1f180;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 5px; /* Place content 20px from the top */
+  /*padding-top: 5px; /* Place content 20px from the top */
   /* color: rgb(35, 80, 175); */
   /* color:  #04258f; */
-  color:  #203066;
-  
+  color: #203066;
+
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
-  flex-direction: column; /* Chuyển thành 'row' nếu muốn bố cục ngang */
+  flex-direction: column;
+  /* Chuyển thành 'row' nếu muốn bố cục ngang */
+  display: flex;
+}
+
+.contentcomponent-01 {
+  margin-left: 2px;
+  /* Same as the width of the sidebar */
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  overflow: auto;
+  /* Enable scrolling if content is long */
+  height: 200;
+  /* Full height */
+  /*width: calc(100% - 200px); /* Adjust for the sidebar width */
+  /*width: calc(100% - 250px); /* Adjust for the sidebar width */
+  width: 100%;
+  background-color: #eef1f180;
+  /* Black */
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  /*padding-top: 5px; /* Place content 20px from the top */
+  /* color: rgb(35, 80, 175); */
+  /* color:  #04258f; */
+  color: #203066;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  flex-direction: column;
+  /* Chuyển thành 'row' nếu muốn bố cục ngang */
   display: flex;
 }
 
 .contentcomponentpopup {
-  margin-left: 5px; /* Same as the width of the sidebar */
+  margin-left: 5px;
+  /* Same as the width of the sidebar */
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  overflow: auto; /* Enable scrolling if content is long */
+  overflow: auto;
+  /* Enable scrolling if content is long */
   /*height: 100vh; /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  background-color: #f6f7f880; /* Black */
+  background-color: #f6f7f880;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 5px; /* Place content 20px from the top */
+  padding-top: 5px;
+  /* Place content 20px from the top */
   /* color: rgb(24, 26, 26); */
-  color:  #203066;
+  color: #203066;
   /* color:  #2e5df5; */
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
+
+.contentcomponentpopup-cateservice {
+  margin-left: 5px;
+  /* Same as the width of the sidebar */
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  overflow: auto;
+  /* Enable scrolling if content is long */
+  background-color: #f6f7f880;
+  /* Black */
+  padding-top: 5px;
+  /* Place content 20px from the top */
+  color: #203066;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  height: 500px;
+}
+
 .LabelTitel {
-  margin-left : 20px;
-  color:  #e7e8ee;
+  margin-left: 20px;
+  color: #e7e8ee;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
   font-weight: bold;
 }
+
+.Td-Titel {
+  margin: 5px;
+  background-color: #417dec;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-weight: bold;
+}
+
+
 .formgroup {
-  margin-left: 5px; /* Same as the width of the sidebar */
-  margin-right: 5px; /* Same as the width of the sidebar */
-  margin-top: 5px; /* Same as the width of the sidebar */
-  margin-bottom: 5px; /* Same as the width of the sidebar */
+  margin-left: 5px;
+  /* Same as the width of the sidebar */
+  margin-right: 5px;
+  /* Same as the width of the sidebar */
+  margin-top: 5px;
+  /* Same as the width of the sidebar */
+  margin-bottom: 5px;
+  /* Same as the width of the sidebar */
   padding: 5px;
-  overflow: auto; /* Enable scrolling if content is long */
-  height: 3; /* Full height */
+  overflow: auto;
+  /* Enable scrolling if content is long */
+  height: 3;
+  /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  background-color: #c0ebeb; /* Black */
+  background-color: #c0ebeb;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 15px; /* Place content 20px from the top */
+  padding-top: 15px;
+  /* Place content 20px from the top */
   color: rgb(11, 26, 26);
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
 }
+
 .form {
-  margin-left: 5px; /* Same as the width of the sidebar */
-  margin-right: 5px; /* Same as the width of the sidebar */
-  margin-top: 5px; /* Same as the width of the sidebar */
-  margin-bottom: 5px; /* Same as the width of the sidebar */
+  margin-left: 5px;
+  /* Same as the width of the sidebar */
+  margin-right: 5px;
+  /* Same as the width of the sidebar */
+  margin-top: 5px;
+  /* Same as the width of the sidebar */
+  margin-bottom: 5px;
+  /* Same as the width of the sidebar */
   padding: 5px;
-  overflow: auto; /* Enable scrolling if content is long */
-  height: 3; /* Full height */
+  overflow: auto;
+  /* Enable scrolling if content is long */
+  height: 3;
+  /* Full height */
   /*width: calc(100% - 250px); /* Adjust for the sidebar width */
-  background-color: #c0ebeb; /* Black */
+  background-color: #c0ebeb;
+  /* Black */
   /*overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 15px; /* Place content 20px from the top */
+  padding-top: 15px;
+  /* Place content 20px from the top */
   color: rgb(11, 26, 26);
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
 }
 
 
-.cus_Label{
-margin-left: 5px;
-margin-right: 5px;
-padding: 5px;
+.cus_Label {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
 }
-.cus_Input{
+
+.cus_Input {
   margin-left: 5px;
   margin-right: 10px;
   padding: 2px;
-  }
-  /* Style print */
+}
+
+/* Style print */
+.print-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+
+@media print {
   .print-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin: 20px;
+    border: none;
+    margin: 0;
+    padding: 0;
   }
-  
-  @media print {
-    .print-container {
-      border: none;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .print-container h1 {
-      font-size: 24px;
-      color: blue;
-    }
-  
-    .print-container p {
-      font-size: 14px;
-    }
-  
-    /* Ẩn phần tử không cần in */
-    .no-print {
-      display: none;
-    }
+
+  .print-container h1 {
+    font-size: 24px;
+    color: blue;
   }
+
+  .print-container p {
+    font-size: 14px;
+  }
+
+  /* Ẩn phần tử không cần in */
+  .no-print {
+    display: none;
+  }
+}
+
 /* customModal.css */
 .custom-modal-content {
   /* max-width: 90%; */
@@ -370,8 +571,9 @@ padding: 5px;
   border-radius: 10px 10px 0 0;
   padding: 10px;
   height: 20px;
- 
+
 }
+
 .custom-modal-body {
   padding: 20px;
   width: 1200px;
@@ -386,6 +588,9 @@ padding: 5px;
 
 .custom-button {
   margin-right: 10px;
+  justify-content: left;
+  align-items: center;
+  width: 100px;
 }
 
 /* customInput.css */
@@ -404,12 +609,26 @@ padding: 5px;
   display: block;
   margin-bottom: 5px;
 }
+
 /* Begin Table*/
 .table-container {
   width: 100%;
-  height: 50vh; /* Full height */
-  overflow-y: auto; /* Thanh trượt dọc */
-  overflow-x: auto; /* Thanh trượt ngang, nếu cần */
+  height: 100vh;
+  /* Full height */
+  overflow-y: auto;
+  /* Thanh trượt dọc */
+  overflow-x: auto;
+  /* Thanh trượt ngang, nếu cần */
+}
+
+.table-container-01 {
+  width: 100%;
+  height: 10vh;
+  /* Full height */
+  overflow-y: auto;
+  /* Thanh trượt dọc */
+  overflow-x: auto;
+  /* Thanh trượt ngang, nếu cần */
 }
 
 table {
@@ -417,11 +636,15 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
-  border: 1px solid #ccc;
+th,
+td {
+  border: 1px solid #21075f;
   padding: 8px;
   text-align: left;
+  color: rgb(70, 44, 219);
+
 }
+
 /* End Table*/
 
 /*grid Style*/
@@ -429,7 +652,8 @@ th, td {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 10px;
-  height: 100vh; /* Chiều cao đầy đủ của màn hình */
+  height: 100vh;
+  /* Chiều cao đầy đủ của màn hình */
 }
 
 .grid-item {
@@ -439,7 +663,7 @@ th, td {
 }
 
 .flex-container {
- 
+
 
   display: flex;
   flex-direction: column;
@@ -462,7 +686,154 @@ th, td {
 .container-grid-buton {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Đẩy grid xuống dưới cùng */
-  height: 10vh; /* Chiều cao toàn màn hình */
+  justify-content: flex-end;
+  /* Đẩy grid xuống dưới cùng */
+  height: 10vh;
+  /* Chiều cao toàn màn hình */
 }
+
 /* End grid Style*/
+/* Table style*/
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0px;
+  border: 1px solid #cccccc;
+
+  /*margin-left: 5px; /* Same as the width of the sidebar */
+  /*margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  overflow: auto; /* Enable scrolling if content is long */
+  background-color: #f6f7f880;
+  /* Black */
+  padding-right: 0px;
+  /* Place content 20px from the top */
+  color: #5a338d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  height: 500px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  z-index: 1;
+  /* Đảm bảo tiêu đề nằm trên các hàng */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* End Table style*/
+
+/* chevron style*/
+
+.chevron-icon {
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.up-icon {
+  color: #2947ce;
+  /* Màu vàng khi mở */
+  /*transform: rotate(0deg); /* Không xoay */
+  transform: rotate(180deg);
+  /* Xoay 180 độ */
+}
+
+.down-icon {
+  color: #131314;
+  /* Màu trắng khi đóng */
+  transform: rotate(-90deg);
+  /* Xoay 180 độ */
+}
+
+.check-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.check-icon {
+  font-size: 1.5rem;
+  transition: color 0.2s, transform 0.2s;
+  margin-right: 5px;
+  color: #2947ce;
+}
+
+.unchecked {
+  color: #ccc;
+  transform: scale(1);
+}
+
+.checked {
+  color: #4CAF50;
+  transform: scale(1.2);
+}
+
+/* chevron style*/
+
+/* Card style*/
+.CardHeader-cus {
+  background-color: #c2d0fc;
+  color: #265ec7;
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* .card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-description {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: #777;
+} */
+/* End Card style*/

@@ -24,88 +24,88 @@ import {
 } from "reactstrap";
 
 
-function Outcliniccomponent ({ LstCachingCateShareLine,LstCachingCateICD10,LstCachingCateHopital,lstCachingCateSevice}) {
-  console.log("DataGetServiceAll:" +JSON.stringify(lstCachingCateSevice));
+function Outcliniccomponent({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingCateHopital, lstCachingCateSevice }) {
+  console.log("DataGetServiceAll:" + JSON.stringify(lstCachingCateSevice));
   //   const [data1, setData] = useState([]);
-//   useEffect(() => {
-//     GetListWaitExams();
-// }, []);
-//           async function GetListWaitExams()
-//           {
-//               try
-//                {
-//                   let datatemp = await callApi.GetAll1();
-//                   const arr = []
-//                   Object.keys(datatemp).forEach(key => arr.push({name: key, value: datatemp[key]}))
-//                    let dataPase = arr[2].value;
-//                    console.log('Get List dataPase menu', dataPase);
-//                    setData(dataPase);
-        
-//               } catch (error) 
-//               {
-//                   console.log('Get list field',error)
-//               }
-//           }
+  //   useEffect(() => {
+  //     GetListWaitExams();
+  // }, []);
+  //           async function GetListWaitExams()
+  //           {
+  //               try
+  //                {
+  //                   let datatemp = await callApi.GetAll1();
+  //                   const arr = []
+  //                   Object.keys(datatemp).forEach(key => arr.push({name: key, value: datatemp[key]}))
+  //                    let dataPase = arr[2].value;
+  //                    console.log('Get List dataPase menu', dataPase);
+  //                    setData(dataPase);
 
-//const dataServices = [];
-// dataALl = dataServices;
-//const [lstCateShare, setlstCateShare] = useState([]);
-//   const [dataServices, setDataServices] = useState(lstCachingCateSevice);
-//   useEffect(() => {
-//     GetServicesAll();
-//      console.log("DataGetServiceAll:" +JSON.stringify(dataServices));
-// }, []);
-//dataServices = GetServicesAll()
-//console.log("DataGetServiceAll:" +JSON.stringify(dataServices));
-// async function GetServicesAll()
-// {
-//     try
-//      {
-//         let dataGet = await callApi.GetServicesAll();
-//         //console.log("dataGet:" +dataGet)
-//         const arr = []
-//         Object.keys(dataGet).forEach(key => arr.push({name: key, value: dataGet[key]}))
-//          const dataPase = arr[2].value;
-//          //console.log("DataGetServicePase:" +JSON.stringify(dataPase));
+  //               } catch (error) 
+  //               {
+  //                   console.log('Get list field',error)
+  //               }
+  //           }
 
-//          setDataServices(data);
+  //const dataServices = [];
+  // dataALl = dataServices;
+  //const [lstCateShare, setlstCateShare] = useState([]);
+  //   const [dataServices, setDataServices] = useState(lstCachingCateSevice);
+  //   useEffect(() => {
+  //     GetServicesAll();
+  //      console.log("DataGetServiceAll:" +JSON.stringify(dataServices));
+  // }, []);
+  //dataServices = GetServicesAll()
+  //console.log("DataGetServiceAll:" +JSON.stringify(dataServices));
+  // async function GetServicesAll()
+  // {
+  //     try
+  //      {
+  //         let dataGet = await callApi.GetServicesAll();
+  //         //console.log("dataGet:" +dataGet)
+  //         const arr = []
+  //         Object.keys(dataGet).forEach(key => arr.push({name: key, value: dataGet[key]}))
+  //          const dataPase = arr[2].value;
+  //          //console.log("DataGetServicePase:" +JSON.stringify(dataPase));
 
-//          const arr1 = []
-//          Object.keys(dataPase).forEach(key => arr1.push({name: key, value: dataPase[key]}))
+  //          setDataServices(data);
 
-//            //  setlstCateShare(JSON.stringify(arr1[0].value));
-//            //  setlstCateIcd(JSON.stringify(arr1[1].value));
-//            //  setlstCateHosp(JSON.stringify(arr1[2].value));
-//            //dataServices = arr1[0].value
+  //          const arr1 = []
+  //          Object.keys(dataPase).forEach(key => arr1.push({name: key, value: dataPase[key]}))
 
-//            //setDataServices(arr1[0].value);
-//            //console.log("DataGroupPase:" +JSON.stringify(arr1[0].value));
+  //            //  setlstCateShare(JSON.stringify(arr1[0].value));
+  //            //  setlstCateIcd(JSON.stringify(arr1[1].value));
+  //            //  setlstCateHosp(JSON.stringify(arr1[2].value));
+  //            //dataServices = arr1[0].value
 
-       
-//          }
-//     catch (error) 
-//     {
-//         console.log('Get list DataGetService field',error)
-//     } 
-// } 
+  //            //setDataServices(arr1[0].value);
+  //            //console.log("DataGroupPase:" +JSON.stringify(arr1[0].value));
+
+
+  //          }
+  //     catch (error) 
+  //     {
+  //         console.log('Get list DataGetService field',error)
+  //     } 
+  // } 
   // const [activeTabListExam, setActiveTabListExam] = useState(0); // State để theo dõi tab hiện tại
 
   // const dataListExam = [
   //   { id: 1, componentName: Patient, tabName: 'Đăng ký khám' },
   //   { id: 2, componentName: registerHistoryCom, tabName: 'Lịch sử đăng ký' },
   //   { id: 2, componentName: registerHiHistoryCom, tabName: 'Lịch sử khám BHYT' },
- 
+
   // ];
-  
-  
+
+
 
   // // Hàm để thay đổi tab được chọn
   // const changeTabListExam = (index) => {
   //   setActiveTabListExam(index);
   // };
   // const [initialData, setData] = useState(GetServicesAll());
-  
- 
+
+
 
   const [activeTab, setActiveTab] = useState(0); // State để theo dõi tab hiện tại
   const data = [
@@ -124,7 +124,7 @@ function Outcliniccomponent ({ LstCachingCateShareLine,LstCachingCateICD10,LstCa
       {/* Tab buttons */}
       <div className='tab' >
         {data.map((item, index) => (
-          <Button style={{color:'Black'}}  key={index} onClick={() => changeTab(index)}>{item.tabName}</Button>
+          <Button style={{ color: 'Black' }} key={index} onClick={() => changeTab(index)}>{item.tabName}</Button>
         ))}
       </div>
       {/* Tab content */}
@@ -133,7 +133,7 @@ function Outcliniccomponent ({ LstCachingCateShareLine,LstCachingCateICD10,LstCa
           {data.filter((item, index) => index === activeTab).map((item) => (
             <tr key={item.id}>
               <div>
-                <item.componentName dataServices = {lstCachingCateSevice}/>
+                <item.componentName dataServices={lstCachingCateSevice} />
               </div>
             </tr>
           ))}

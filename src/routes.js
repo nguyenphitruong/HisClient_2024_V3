@@ -14,10 +14,12 @@ import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-
-//import Patientcomponent from "./components/emr/patientcomponent";
 import Registercomponent from "./components/emr/registercomponent";
-import Outcliniccomponent from "./components/emr/outcliniccomponent";
+
+import OutclinicCom from "./components/emr/OutMedical/outclinicCom.js";
+import Outcliniccomponent from "./components/emr/OutMedical/outclinicCom.js";
+
+
 import Patient from './components/emr/PatientCom.js';
 import TabTableComponent from './components/emr/TabTableComponent.js';
 import PageNumberCom from './components/emr/PageNumberCom.js';
@@ -65,21 +67,21 @@ var routes = [
       {
         code: "KHAMBENH",
         name: "Menu 05",
-        path: "/outcliniccomponent",
+        path: "/outclinicCom",
         icon: TimelineRoundedIcon,
-        component : Outcliniccomponent,
+        component : OutclinicCom,
         layout: "/admin",
         modulepath: "/pha",
       },
-      {
-        code: "KHAMBENHH",
-        name: "Menu 06",
-        path: "/outcliniccomponent",
-        icon: SavingsRoundedIcon,
-        component : Outcliniccomponent,
-        layout: "/admin",
-        modulepath: "/pha",
-      },
+      // {
+      //   code: "KHAMBENHH",
+      //   name: "Menu 06",
+      //   path: "/outcliniccomponent",
+      //   icon: SavingsRoundedIcon,
+      //   component : Outcliniccomponent,
+      //   layout: "/admin",
+      //   modulepath: "/pha",
+      // },
     ]
   },
   {
@@ -97,15 +99,15 @@ var routes = [
         layout: "/admin",
         modulepath: "/emr",
       },
-      {
-        code: "TONGHOPTHUOC",
-        name: "Menu 02",
-        path: "/outcliniccomponent",
-        icon: BarChartRoundedIcon,
-        component : Outcliniccomponent,
-        layout: "/admin",
-        modulepath: "/emr",
-      },
+      // {
+      //   code: "TONGHOPTHUOC",
+      //   name: "Menu 02",
+      //   path: "/outcliniccomponent",
+      //   icon: BarChartRoundedIcon,
+      //   component : Outcliniccomponent,
+      //   layout: "/admin",
+      //   modulepath: "/emr",
+      // },
     ]
   },
   {

@@ -301,7 +301,7 @@ function Patient({ LstCachingCateShareLine, LstCachingCateHopital }) {
 
     <div >
       <Form onSubmit={handleSubmit}>
-        <Button color="primary" onClick={handleShow}>Thêm</Button>
+        <Button color="primary" outline onClick={handleShow}>Thêm</Button>
         <CustomModal show={show} onHide={handleClose} width="1400px">
           <Modal.Header closeButton className='custom-modal-header'>
             <Modal.Title>Thông tinh hành chính bệnh nhân!</Modal.Title>
@@ -714,10 +714,16 @@ function Patient({ LstCachingCateShareLine, LstCachingCateHopital }) {
             {/* </Modal> */}
           </Modal.Body>
           <Modal.Footer >
-            <Button color="primary" onClick={handleSubmit} className="custom-button">Mới</Button>
+            {/* <Button color="primary" onClick={handleSubmit} className="custom-button">Mới</Button>
             <Button color="primary" onClick={handleSubmit} className="custom-button">Lưu</Button>
             <Button color="secondary" onClick={handleClose} className="custom-button">Bỏ qua</Button>
-            <Button color="secondary" onClick={handleClose} className="custom-button">Thoát</Button>
+            <Button color="secondary" onClick={handleClose} className="custom-button">Thoát</Button> */}
+
+            <Button color="primary" outline onClick={handleSubmit} className="custom-button">Mới</Button>
+            <Button color="success" outline onClick={handleSubmit} className="custom-button">Lưu</Button>
+            <Button color="warning" outline onClick={handleClose} className="custom-button">Bỏ qua</Button>
+            <Button color="danger" outline onClick={handleClose} className="custom-button">Thoát</Button>
+
           </Modal.Footer>
         </CustomModal>
       </Form>

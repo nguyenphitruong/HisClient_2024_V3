@@ -117,7 +117,6 @@ const RegisterHistoryCom = () =>  {
                       </Row>
                       
                 </div>
-                
             </>
         )
 }

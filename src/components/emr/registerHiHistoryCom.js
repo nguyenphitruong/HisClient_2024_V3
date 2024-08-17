@@ -1,5 +1,5 @@
 
-import React, {useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import callApi from '../../apis/callApi';
 //import { DataContext } from '../../contexts/ShareContext/DataContext';
 
@@ -23,20 +23,20 @@ import {
 } from "reactstrap";
 
 // function RegisterHiHistoryCom ({LstCachingCateShareLine,LstCachingCateICD10,LstCachingCateHopital}){ 
-    function RegisterHiHistoryCom({ LstCachingCateShareLine,LstCachingCateICD10,LstCachingCateHopital}) {
+function RegisterHiHistoryCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingCateHopital }) {
 
-        // const a = prop.title;
-        // const b = prop.description;
-        // console.log("a:" +a);
-        // console.log("b:" +b);
-      
-        // const a = LstCachingCateShareLine;
-        // const b = LstCachingCateICD10;
-        // const c = LstCachingCateHopital;
+    // const a = prop.title;
+    // const b = prop.description;
+    // console.log("a:" +a);
+    // console.log("b:" +b);
 
-        // console.log("a:" +a);
-        // console.log("b:" +b);
-        // console.log("c:" +c);
+    // const a = LstCachingCateShareLine;
+    // const b = LstCachingCateICD10;
+    // const c = LstCachingCateHopital;
+
+    // console.log("a:" +a);
+    // console.log("b:" +b);
+    // console.log("c:" +c);
     //const {DataCaching} = useContext(DataContext);
     //const lstDataCaching =  [];
     //lstDataCaching = DataCaching;
@@ -49,7 +49,7 @@ import {
     const [currentPage, setCurrentPage] = useState(1);
     //const [data, setData] = useState([LstCachingCateShareLine]);
 
-   // console.log("DataPage:" +LstCachingCateShareLine )
+    // console.log("DataPage:" +LstCachingCateShareLine )
     // Calculate total number of pages
     const totalPages = Math.ceil(LstCachingCateShareLine.length / itemsPerPage);
     // Calculate start and end index for current page
@@ -63,13 +63,13 @@ import {
     };
 
     useEffect(() => {
-    //JoneData();
-    //RefreshList();
-  }, []);
-        return (
-            <>
-                {/* <div style={{margin: '10px', fontSize: '14px'}}> */}
-                <div className="contentcomponent">
+        //JoneData();
+        //RefreshList();
+    }, []);
+    return (
+        <>
+            {/* <div style={{margin: '10px', fontSize: '14px'}}> */}
+            <div className="contentcomponent">
 
                 {/* <div>
       {LstCachingCateShareLine.map((item, index) =>
@@ -80,56 +80,56 @@ import {
                                                 </tr>
                                             )}
       </div> */}
-                     {/* Danh sách chờ khám ! */}
-                       <Row style={{height:'10px'}}>
-                        <Col md = {12}>
+                {/* Danh sách chờ khám ! */}
+                <Row >
+                    <Col md={12}>
                         <Card>
-                                {/* <CardHeader>
+                            {/* <CardHeader>
                                     <CardTitle tag="h4">Dịch vụ đăng ký!</CardTitle>
                                 </CardHeader> */}
-                                <CardBody>
-                                    <Table Striped style={{maxHeight:'400px', minWidth:'1600px'}} >
-                                        <thead >
-                                            <tr >
-                                                <th style={{width:'300px'}}>Mã </th>
-                                                <th >Tên </th>
-                                                <th>Mã cấp cha  </th>
-                                                
-                                            </tr>
-                                        </thead>
+                            <CardBody>
+                                <Table Striped style={{ maxHeight: '400px', minWidth: '1600px' }} >
+                                    <thead >
+                                        <tr >
+                                            <th style={{ width: '300px' }}>Mã </th>
+                                            <th >Tên </th>
+                                            <th>Mã cấp cha  </th>
 
-                                        <tbody>
-                                            {currentPageData.map((item, index) =>
-                                                <tr key={index.code}>
-                                                    <td>{item.code}</td>
-                                                    <td>{item.name}</td>
-                                                    <td>{item.codeh}</td>
-                                                </tr>
-                                            )}
-                                            
-                                            <tr>
-                                                {Array.from({ length: totalPages }, (_, index) => (
-                                                    
-                                                <Button style={{margin:'1px'}} key={index} onClick={() => handlePageChange(index + 1)}>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {currentPageData.map((item, index) =>
+                                            <tr key={index.code}>
+                                                <td>{item.code}</td>
+                                                <td>{item.name}</td>
+                                                <td>{item.codeh}</td>
+                                            </tr>
+                                        )}
+
+                                        <tr>
+                                            {Array.from({ length: totalPages }, (_, index) => (
+
+                                                <Button style={{ margin: '1px' }} key={index} onClick={() => handlePageChange(index + 1)}>
                                                     {index + 1}
                                                 </Button>
-                                                
-                                                ))}
-                                            </tr>
-                                            
 
-                                        </tbody>
-                                    </Table>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                      </Row>
-                      
-                </div>
-                
-            </>
-        )
-    
+                                            ))}
+                                        </tr>
+
+
+                                    </tbody>
+                                </Table>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+
+            </div>
+
+        </>
+    )
+
 }
 
 export default RegisterHiHistoryCom;

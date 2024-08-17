@@ -1,7 +1,7 @@
 
 
 //import '../index.css';
-import '../App';
+//import '../App';
 
 import RouteComponent from "../routes.js"
 import callApi from '../apis/callApi.js';
@@ -35,6 +35,9 @@ import {
   FormText,
   Navbar
 } from "reactstrap";
+
+// import Sidebar from './Sidebar';
+// import '../assets/css/sidebar';
 
 
 var ps;
@@ -178,10 +181,10 @@ function Dashboard(props) {
         activeColor={activeColor}
 
       />
-      <div className="content" ref={mainPanel}>
+      <div className='content-body' ref={mainPanel}>
+      {/* <div className='main-panel' ref={mainPanel}> */}
       </div>
-      {/* <Foodter/>    */}
-
+       {/* <Foodter/>    */}
     </div>
 
   );

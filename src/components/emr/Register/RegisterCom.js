@@ -11,8 +11,9 @@ import patientModel from '../../../models/emr/patient/PatientModel';
 import patientHiModel from '../../../models/emr/patient/PatientHiModel';
 import PrintComponent from '../../PrintReports/PrintComponent.js';
 import PopupPatientCom from '../../emr/Patient/PopupPatientCom.js'
-//import RegisterCom from '../emr/Register/RegisterCom';
+import PopupServiceItemCom from '../../pay/Modal/PopupServiceItemCom.js'
 
+//import RegisterCom from '../emr/Register/RegisterCom';
 
 // import Row from '../../../RowCus.js';
 // import Col from '../../../ColumnCus.js';
@@ -215,437 +216,445 @@ function RegisterCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingC
             {/* <Col size='120' > */}
             <Grid item xs={12} sm={4}>
               {/* <Paper style={{ height: 350, backgroundColor: '#d9eef5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 2 }}> */}
-                <div>
-                  <Col>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1"  >
-                      {/* <Label className="custom-label"  for="patcode" sm={3} >Mã BN:</Label> */}
-                      <Label for="patcode" sm={3} style={{textAlign: 'right' , marginLeft: 0}} >Mã BN:</Label>
-                      <Col sm={6}>
-                        <Input 
-                          id="patcode"
-                          name="patcode"
-                          // value= {patcodeSelect} onChange={(e) => setPatcodeSelect(e.target.value)}
-                          value={formDataPatient.patcode}
-                          onKeyDown={handleKeyDownPatcode}
-                          // onChange={handleChange} 
-                          placeholder=""
-                          type="text"
-                        />
-                      </Col>
-                      <Col Col sm={2}>
-                      
-                      <PopupPatientCom 
-                          LstCachingCateShareLine={LstCachingCateShareLine}
-                          LstCachingCateHopital={LstCachingCateHopital} />
-                      
-                      </Col>
-                    </FormGroup>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1" >
-                      <Label for="examplePassword" sm={3} style={{textAlign: 'right' , marginLeft: 0}} > Họ tên:</Label>
-                      <Col >
-                        <Input
-                          id="id"
-                          name="fullname"
-                          value={formDataPatient.name}
-                          onChange={handleChange}
-                          placeholder=" "
-                          type="text"
-                        />
+              <div>
+                <Col>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1"  >
+                    {/* <Label className="custom-label"  for="patcode" sm={3} >Mã BN:</Label> */}
+                    <Label for="patcode" sm={3} style={{ textAlign: 'right', marginLeft: 0 }} >Mã BN:</Label>
+                    <Col sm={6}>
+                      <Input
+                        id="patcode"
+                        name="patcode"
+                        // value= {patcodeSelect} onChange={(e) => setPatcodeSelect(e.target.value)}
+                        value={formDataPatient.patcode}
+                        onKeyDown={handleKeyDownPatcode}
+                        // onChange={handleChange} 
+                        placeholder=""
+                        type="text"
+                      />
+                    </Col>
+                    <Col Col sm={2}>
 
-                      </Col>
+                      <PopupPatientCom
+                        LstCachingCateShareLine={LstCachingCateShareLine}
+                        LstCachingCateHopital={LstCachingCateHopital} />
 
-                    </FormGroup>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                      <Label for="exampleSelect" sm={3} style={{textAlign: 'right' , marginLeft: 0}}>  Giới tính:</Label>
-                      <Col >
-                        <Input
-                          id="exampleSelect"
-                          name="select"
-                          type="select"
-                        >
-                          <option>
-                            1
-                          </option>
-                          <option>
-                            2
-                          </option>
-                          <option>
-                            3
-                          </option>
-                        </Input>
-                      </Col>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1" >
+                    <Label for="examplePassword" sm={3} style={{ textAlign: 'right', marginLeft: 0 }} > Họ tên:</Label>
+                    <Col >
+                      <Input
+                        id="id"
+                        name="fullname"
+                        value={formDataPatient.name}
+                        onChange={handleChange}
+                        placeholder=" "
+                        type="text"
+                      />
 
-                      <Label
-                        for="exampleSelect"
-                        sm={2}
+                    </Col>
+
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label for="exampleSelect" sm={3} style={{ textAlign: 'right', marginLeft: 0 }}>  Giới tính:</Label>
+                    <Col >
+                      <Input
+                        id="exampleSelect"
+                        name="select"
+                        type="select"
                       >
-                        N.sinh:
-                      </Label>
+                        <option>
+                          1
+                        </option>
+                        <option>
+                          2
+                        </option>
+                        <option>
+                          3
+                        </option>
+                      </Input>
+                    </Col>
 
-                      <Col >
-                        <Input
-                          id="birthday"
-                          name="birthday"
-                          value={formDataPatient.birthday}
-                          onChange={handleChange}
-                          type="text"
-                        >
+                    <Label
+                      for="exampleSelect"
+                      sm={2}
+                    >
+                      N.sinh:
+                    </Label>
 
-                        </Input>
-                      </Col>
-                    </FormGroup>
-
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                      <Label
-                        for="exampleSelectMulti"
-                        sm={3} style={{textAlign: 'right' , marginLeft: 0}}
+                    <Col >
+                      <Input
+                        id="birthday"
+                        name="birthday"
+                        value={formDataPatient.birthday}
+                        onChange={handleChange}
+                        type="text"
                       >
-                        Điện thoại:
-                      </Label>
-                      <Col  >
-                        <Input
-                          id="phonenumber"
-                          name="phonenumber"
-                          value={formDataPatient.phonenumber}
-                          onChange={handleChange}
-                          placeholder=""
-                          type="text"
-                        />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                      <Label
-                        for="exampleSelectMulti"
-                        sm={3} style={{textAlign: 'right' , marginLeft: 0}}
-                      >
-                        Địa chỉ:
-                      </Label>
-                      <Col  >
-                        <Input
-                          id="addresworkplace"
-                          name="addresworkplace"
-                          value={formDataPatient.addresworkplace}
-                          onChange={handleChange}
-                          placeholder=""
-                          type="text"
-                        />
-                      </Col>
-                    </FormGroup>
-                  </Col>
-                </div>
+
+                      </Input>
+                    </Col>
+                  </FormGroup>
+
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelectMulti"
+                      sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Điện thoại:
+                    </Label>
+                    <Col  >
+                      <Input
+                        id="phonenumber"
+                        name="phonenumber"
+                        value={formDataPatient.phonenumber}
+                        onChange={handleChange}
+                        placeholder=""
+                        type="text"
+                      />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelectMulti"
+                      sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Địa chỉ:
+                    </Label>
+                    <Col  >
+                      <Input
+                        id="addresworkplace"
+                        name="addresworkplace"
+                        value={formDataPatient.addresworkplace}
+                        onChange={handleChange}
+                        placeholder=""
+                        type="text"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Col>
+              </div>
               {/* </Paper> */}
             </Grid>
 
             <Grid item xs={12} sm={4}>
               {/* <Paper style={{ height: 350, backgroundColor: '#d9eef5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 2 }}> */}
-                <div>
-                  <Col >
+              <div>
+                <Col >
 
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="examplePassword"
+                      sm={4} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Nơi giới thiệu:
+                    </Label>
+
+                    <Col>
+                      <Input select value={formData.RegisterModel.placeIntrocode} onChange={handleChange}
+                        id="nationNatycode"
+                        name="nationNatycode"
+                        type="select"
+                      >
+                        <option value=""></option>
+                        {objects.map((option, index) => (
+                          <option key={index.id} value={option.code}>
+                            {option.code} - {option.name}
+                          </option>
+                        ))}
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelect"
+                      sm={4} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Bảng giá:
+                    </Label>
+
+                    <Col>
+                      <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
+                        id="jobcode"
+                        name="jobcode"
+                        type="select"
+                        placeholder='Chọn bảng giá'
+                      >
+                        {discounts.map((option, index) => (
+                          <option key={index.id} value={option.code}>
+                            {option.code} - {option.name}
+                          </option>
+                        ))}
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelectMulti"
+                      sm={4} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Chiết khấu:
+                    </Label>
+                    <Col>
+                      <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
+                        id="jobcode"
+                        name="jobcode"
+                        type="select"
+                        placeholder='Chọn chiết khấu'
+                      >
+                        {discounts.map((option, index) => (
+                          <option key={index.id} value={option.code}>
+                            {option.code} - {option.name}
+                          </option>
+                        ))}
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelectMulti"
+                      sm={4} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Công khám:
+                    </Label>
+                    <Col sm={6}>
+                      <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
+                        id="jobcode"
+                        name="jobcode"
+                        type="select"
+                        placeholder='Chọn công khám'
+                      >
+                        {serExams.map((option, index) => (
+                          <option key={index.id} value={option.code}>
+                            {option.code} - {option.name}
+                          </option>
+                        ))}
+                      </Input>
+
+                    </Col>
+                    <Col Col sm={2}>
+
+                      <PopupServiceItemCom lstCachingCateSevice={lstCachingCateSevice} />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                    <Label
+                      for="exampleSelectMulti"
+                      sm={4} style={{ textAlign: 'right', marginLeft: 0 }}
+                    >
+                      Phòng khám:
+                    </Label>
+                    <Col>
+                      <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
+                        id="jobcode"
+                        name="jobcode"
+                        type="select"
+                        placeholder='Chọn phòng khám'
+                      >
+                        {docExams.map((option, index) => (
+                          <option key={index.id} value={option.code}>
+                            {option.code} - {option.name}
+                          </option>
+                        ))}
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                </Col>
+              </div>
+              {/* </Paper> */}
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              {/* <Paper style={{ height: 350, backgroundColor: '#d9eef5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 2 }}> */}
+              <div>
+                <Col >
+                  <Form>
+                    {/* <FormGroup row className="mb-2 mr-sm-2 mb-sm-1"> */}
+                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                      <Label for="Đối tượng" sm={3} style={{ textAlign: 'right', marginLeft: 0 }}>
+                        Đối tượng:
+                      </Label>
+
+                      <Col>
+                        <Input style={{ width: '120px' }} select value={formData.RegisterModel.objectcode} onChange={handleChange}
+                          id="objectcode"
+                          name="objectcode"
+                          type="select"
+                        >
+                          <option value="">Chọn dân tộc</option>
+                          {objects.map((option, index) => (
+                            <option key={index.id} value={option.code}>
+                              {option.code} -  {option.name}
+                            </option>
+                          ))}
+
+                        </Input>
+                      </Col>
+                      <Col>
+                        <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
+                          id="objectcode"
+                          name="objectcode"
+                          type="checkbox"
+                        > BHTN
+
+
+                        </Input>
+                      </Col>
+                      <Col>
+                        <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
+                          id="objectcode"
+                          name="objectcode"
+                          type="checkbox"
+                        >Ưu tiên
+
+                        </Input>
+                      </Col>
+                    </FormGroup>
+                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
+                      <Label
+                        for="exampleEmail"
+                        sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
+                      >
+                        Số thẻ:
+                      </Label>
+
+
+                      <Col>
+                        <Input
+                          id="email"
+                          name="email"
+                          value={formData.RegisterModel.discountcode}
+                          onChange={handleChange}
+                          placeholder=""
+                          type="email"
+                        />
+
+                      </Col>
+                    </FormGroup>
                     <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
                       <Label
                         for="examplePassword"
-                        sm={4} style={{textAlign: 'right' , marginLeft: 0}}
+                        sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
                       >
-                        Nơi giới thiệu:
+                        Hạn thẻ:
                       </Label>
 
                       <Col>
-                        <Input select value={formData.RegisterModel.placeIntrocode} onChange={handleChange}
-                          id="nationNatycode"
-                          name="nationNatycode"
-                          type="select"
-                        >
-                          <option value=""></option>
-                          {objects.map((option, index) => (
-                            <option key={index.id} value={option.code}>
-                              {option.code} - {option.name}
-                            </option>
-                          ))}
-                        </Input>
+                        <Input
+                          id="email"
+                          name="email"
+                          value={formData.RegisterModel.discountcode}
+                          onChange={handleChange}
+                          placeholder=""
+                          type="email"
+                        />
+                      </Col>
+                      <Col>
+                        <Input
+                          id="email"
+                          name="email"
+                          value={formData.RegisterModel.discountcode}
+                          onChange={handleChange}
+                          placeholder=""
+                          type="email"
+                        />
                       </Col>
                     </FormGroup>
+
                     <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
                       <Label
                         for="exampleSelect"
-                        sm={4} style={{textAlign: 'right' , marginLeft: 0}}
+                        sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
                       >
-                        Bảng giá:
+                        ĐKKCBBĐ:
                       </Label>
 
-                      <Col>
-                        <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
-                          id="jobcode"
-                          name="jobcode"
+                      <Col >
+                        <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
+                          id="objectcode"
+                          name="objectcode"
                           type="select"
-                          placeholder='Chọn bảng giá'
                         >
-                          {discounts.map((option, index) => (
+                          <option value="">Chọn phường xã </option>
+                          {hospitals.map((option, index) => (
                             <option key={index.id} value={option.code}>
                               {option.code} - {option.name}
                             </option>
                           ))}
                         </Input>
+
                       </Col>
                     </FormGroup>
                     <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
                       <Label
                         for="exampleSelectMulti"
-                        sm={4} style={{textAlign: 'right' , marginLeft: 0}}
+                        sm={3} style={{ textAlign: 'right', marginLeft: 0 }}
                       >
-                        Chiết khấu:
+                        Tuyến
                       </Label>
-                      <Col>
-                        <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
-                          id="jobcode"
-                          name="jobcode"
-                          type="select"
-                          placeholder='Chọn chiết khấu'
-                        >
-                          {discounts.map((option, index) => (
-                            <option key={index.id} value={option.code}>
-                              {option.code} - {option.name}
-                            </option>
-                          ))}
-                        </Input>
+                      <Col sm={2}>
+                        <Input
+                          id="objectcode"
+                          name="objectcode"
+                          value={formData.RegisterModel.objectcode}
+                          onChange={handleChange}
+                          placeholder=""
+                          type="text"
+                        />
                       </Col>
-                    </FormGroup>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
                       <Label
                         for="exampleSelectMulti"
-                        sm={4} style={{textAlign: 'right' , marginLeft: 0}}
+                        sm={3}
                       >
-                        Công khám:
+                        M.hưởng:
                       </Label>
-                      <Col>
-                        <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
-                          id="jobcode"
-                          name="jobcode"
-                          type="select"
-                          placeholder='Chọn công khám'
+                      <Col sm={2}>
+                        <Input
+                          id="exampleEmail"
+                          name="email"
+                          placeholder=""
+                          type="text"
+                        />
+                      </Col>
+                      <Col >
+                        <Input select value={selectedDocExam} onChange={handleChange}
+                          id="exampleSelect"
+                          name="select"
+                          type="checkbox"
                         >
-                          {serExams.map((option, index) => (
-                            <option key={index.id} value={option.code}>
-                              {option.code} - {option.name}
+                          <option value="">Chọn địa chỉ</option>
+                          {discounts.map((option) => (
+                            <option key={option.id} value={option.code}>
+                              {option.name}
                             </option>
+
                           ))}
+
                         </Input>
+                        {/* <p>Selected options: {selectedPdw.join(', ')}</p> */}
+
                       </Col>
                     </FormGroup>
-                    <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                      <Label
-                        for="exampleSelectMulti"
-                        sm={4} style={{textAlign: 'right' , marginLeft: 0}}
-                      >
-                        Phòng khám:
-                      </Label>
-                      <Col>
-                        <Input select value={formData.RegisterModel.pricecode} onChange={handleChange}
-                          id="jobcode"
-                          name="jobcode"
-                          type="select"
-                          placeholder='Chọn phòng khám'
-                        >
-                          {docExams.map((option, index) => (
-                            <option key={index.id} value={option.code}>
-                              {option.code} - {option.name}
-                            </option>
-                          ))}
-                        </Input>
-                      </Col>
-                    </FormGroup>
-                  </Col>
-                </div>
+
+                  </Form>
+                </Col>
+              </div>
               {/* </Paper> */}
             </Grid>
 
-            <Grid item xs={12} sm={4}>
-              {/* <Paper style={{ height: 350, backgroundColor: '#d9eef5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 2 }}> */}
-                <div>
-                  <Col >
-                    <Form>
-                      {/* <FormGroup row className="mb-2 mr-sm-2 mb-sm-1"> */}
-                      <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                        <Label for="Đối tượng" sm={3} style={{textAlign: 'right' , marginLeft: 0}}> 
-                          Đối tượng:
-                        </Label>
-
-                        <Col>
-                          <Input style={{ width: '120px' }} select value={formData.RegisterModel.objectcode} onChange={handleChange}
-                            id="objectcode"
-                            name="objectcode"
-                            type="select"
-                          >
-                            <option value="">Chọn dân tộc</option>
-                            {objects.map((option, index) => (
-                              <option key={index.id} value={option.code}>
-                                {option.code} -  {option.name}
-                              </option>
-                            ))}
-
-                          </Input>
-                        </Col>
-                        <Col>
-                          <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
-                            id="objectcode"
-                            name="objectcode"
-                            type="checkbox"
-                          > BHTN
-
-
-                          </Input>
-                        </Col>
-                        <Col>
-                          <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
-                            id="objectcode"
-                            name="objectcode"
-                            type="checkbox"
-                          >Ưu tiên
-
-                          </Input>
-                        </Col>
-                      </FormGroup>
-                      <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                        <Label
-                          for="exampleEmail"
-                          sm={3} style={{textAlign: 'right' , marginLeft: 0}}
-                        >
-                          Số thẻ:
-                        </Label>
-
-
-                        <Col>
-                          <Input
-                            id="email"
-                            name="email"
-                            value={formData.RegisterModel.discountcode}
-                            onChange={handleChange}
-                            placeholder=""
-                            type="email"
-                          />
-
-                        </Col>
-                      </FormGroup>
-                      <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                        <Label
-                          for="examplePassword"
-                          sm={3} style={{textAlign: 'right' , marginLeft: 0}}
-                        >
-                          Hạn thẻ:
-                        </Label>
-
-                        <Col>
-                          <Input
-                            id="email"
-                            name="email"
-                            value={formData.RegisterModel.discountcode}
-                            onChange={handleChange}
-                            placeholder=""
-                            type="email"
-                          />
-                        </Col>
-                        <Col>
-                          <Input
-                            id="email"
-                            name="email"
-                            value={formData.RegisterModel.discountcode}
-                            onChange={handleChange}
-                            placeholder=""
-                            type="email"
-                          />
-                        </Col>
-                      </FormGroup>
-
-                      <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                        <Label
-                          for="exampleSelect"
-                          sm={3} style={{textAlign: 'right' , marginLeft: 0}}
-                        >
-                          ĐKKCBBĐ:
-                        </Label>
-
-                        <Col >
-                          <Input select value={formData.RegisterModel.objectcode} onChange={handleChange}
-                            id="objectcode"
-                            name="objectcode"
-                            type="select"
-                          >
-                            <option value="">Chọn phường xã </option>
-                            {hospitals.map((option, index) => (
-                              <option key={index.id} value={option.code}>
-                                {option.code} - {option.name}
-                              </option>
-                            ))}
-                          </Input>
-
-                        </Col>
-                      </FormGroup>
-                      <FormGroup row className="mb-2 mr-sm-2 mb-sm-1">
-                        <Label
-                          for="exampleSelectMulti"
-                          sm={3} style={{textAlign: 'right' , marginLeft: 0}}
-                        >
-                          Tuyến
-                        </Label>
-                        <Col sm={2}>
-                          <Input
-                            id="objectcode"
-                            name="objectcode"
-                            value={formData.RegisterModel.objectcode}
-                            onChange={handleChange}
-                            placeholder=""
-                            type="text"
-                          />
-                        </Col>
-                        <Label
-                          for="exampleSelectMulti"
-                          sm={3}
-                        >
-                          M.hưởng:
-                        </Label>
-                        <Col sm={2}>
-                          <Input
-                            id="exampleEmail"
-                            name="email"
-                            placeholder=""
-                            type="text"
-                          />
-                        </Col>
-                        <Col >
-                          <Input select value={selectedDocExam} onChange={handleChange}
-                            id="exampleSelect"
-                            name="select"
-                            type="checkbox"
-                          >
-                            <option value="">Chọn địa chỉ</option>
-                            {discounts.map((option) => (
-                              <option key={option.id} value={option.code}>
-                                {option.name}
-                              </option>
-
-                            ))}
-
-                          </Input>
-                          {/* <p>Selected options: {selectedPdw.join(', ')}</p> */}
-
-                        </Col>
-                      </FormGroup>
-
-                    </Form>
-                  </Col>
-                </div>
-              {/* </Paper> */}
-            </Grid>
+             {/* Sinh hiệu! */}
+          
 
             {/* Danh sách chờ khám ! */}
-            <Grid item xs={12} sm={4} style={{minHeight: 400} }>
+            <Grid item xs={12} sm={4} style={{ minHeight: 400 }}>
               {/* <Paper style={{ height: 300, backgroundColor: 'lightgray', display: 'flex', alignItems: 'center', justifyContent: 'center' }}> */}
               <Col  >
                 <Card>
-                  <CardHeader>
+                  <CardHeader style={{background: '#c2d0fc', color: '#265ec7' ,fontFamily:'Arial, Helvetica, sans-serif', fontWeight: 'bold', border: '10px 10px 0 0', padding: '5px'}}>
                     <CardTitle tag="h5">Danh sách chờ khám !</CardTitle>
                   </CardHeader>
                   <CardBody>
-                    <Table responsive>
+                    <Table className='table-container' >
                       <thead className="text-primary">
                         <tr>
                           <th>STT</th>
@@ -680,14 +689,15 @@ function RegisterCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingC
               </Col>
               {/* </Paper> */}
             </Grid>
-            <Grid item xs={12} sm={8} style={{minHeight: 400} }>
+             {/* Dịch vụ đăng ký! */}
+            <Grid item xs={12} sm={8} style={{ minHeight: 400 }}>
               <Col  >
                 <Card>
-                  <CardHeader>
-                    <CardTitle tag="h5">Danh sách chờ khám !</CardTitle>
+                  <CardHeader style={{background: '#c2d0fc', color: '#265ec7' ,fontFamily:'Arial, Helvetica, sans-serif', fontWeight: 'bold', border: '10px 10px 0 0', padding: '5px'}}>
+                    <CardTitle >Dịch vụ đăng ký !</CardTitle>
                   </CardHeader>
                   <CardBody>
-                    <Table responsive>
+                    <Table className='table-container'>
                       <thead className="text-primary">
                         <tr>
                           <th>STT</th>
@@ -727,10 +737,10 @@ function RegisterCom({ LstCachingCateShareLine, LstCachingCateICD10, LstCachingC
             {/* Thông tin Nút chuc năng*/}
             <Grid item xs={12}>
               <Paper style={{ height: 50, backgroundColor: 'while', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Button color="primary" onClick={handleSubmit} className="custom-button">Mới</Button>
-                <Button color="primary" onClick={handleSubmit} className="custom-button">Lưu</Button>
-                <Button color="secondary" onClick={handleSubmit} className="custom-button">Bỏ qua</Button>
-                <Button color="secondary" onClick={handleSubmit} className="custom-button">Thoát</Button>
+                <Button color="primary" outline onClick={handleSubmit} className="custom-button">Mới</Button>
+                <Button color="success" outline onClick={handleSubmit} className="custom-button">Lưu</Button>
+                <Button color="warning" outline onClick={handleSubmit} className="custom-button">Bỏ qua</Button>
+                <Button color="danger" outline onClick={handleSubmit} className="custom-button">Thoát</Button>
                 <PrintComponent />
               </Paper>
             </Grid>
